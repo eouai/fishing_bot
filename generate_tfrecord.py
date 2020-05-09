@@ -6,6 +6,13 @@ import os
 import io
 import pandas as pd
 import tensorflow as tf
+import sys
+sys.path.append("C:\\Users\\Burt\\Documents\\Git\\fishing_bot\\tensorflow\\models\\research\\")
+sys.path.append("C:\\Users\\Burt\\Documents\\Git\\fishing_bot\\tensorflow\\models\\object_detection\\utils")
+
+# directory = 'C:\\Users\\Burt\\Documents\\Git\\fishing_bot\\tensorflow\\models\\research'
+# os.chdir(directory)
+# print(os.getcwd())
 
 from PIL import Image
 from object_detection.utils import dataset_util
@@ -20,7 +27,7 @@ FLAGS = flags.FLAGS
 
 # TO-DO replace this with label map
 def class_text_to_int(row_label):
-    if row_label == 'raccoon':
+    if row_label == 'bobber':
         return 1
     else:
         None

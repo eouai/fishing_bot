@@ -7,6 +7,7 @@ import xml.etree.ElementTree as ET
 def xml_to_csv(path):
     xml_list = []
     for xml_file in glob.glob(path + '/*.xml'):
+        print(xml_file)
         tree = ET.parse(xml_file)
         root = tree.getroot()
         for member in root.findall('object'):
@@ -26,10 +27,15 @@ def xml_to_csv(path):
 
 
 def main():
-    image_path = os.path.join(os.getcwd(), 'annotations')
-    xml_df = xml_to_csv(image_path)
-    xml_df.to_csv('raccoon_labels.csv', index=None)
-    print('Successfully converted xml to csv.')
+    image_path = os.path.join(os.getcwd(), 'images')
+    print(image_path)
+    dirs = os.listdir(image_path)
+    for d in dirs:
+        sub_path = os.path.join(image_path, d)
+        print(sub_path)
+        xml_df = xml_to_csv(sub_path)
+        xml_df.to_csv(sub_path + '_labels.csv', index=None)
+        print('Successfully converted xml to csv.')
 
 
 main()
