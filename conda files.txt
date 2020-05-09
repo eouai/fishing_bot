@@ -1,0 +1,8 @@
+pip install "git+https://github.com/philferriere/cocoapi.git#egg=pycocotools&subdirectory=PythonAPI"
+
+
+conda install toml
+conda install pyqt=5
+conda install contextlib2
+conda install lxml
+
