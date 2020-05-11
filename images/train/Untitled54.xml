@@ -1,0 +1,26 @@
+<annotation>
+	<folder>raw</folder>
+	<filename>Untitled54.png</filename>
+	<path>D:\images\raw\Untitled54.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1920</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>bobber</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1110</xmin>
+			<ymin>318</ymin>
+			<xmax>1167</xmax>
+			<ymax>372</ymax>
+		</bndbox>
+	</object>
+</annotation>

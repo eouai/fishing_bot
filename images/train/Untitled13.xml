@@ -1,0 +1,26 @@
+<annotation>
+	<folder>raw</folder>
+	<filename>Untitled13.png</filename>
+	<path>D:\images\raw\Untitled13.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1920</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>bobble</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1292</xmin>
+			<ymin>212</ymin>
+			<xmax>1339</xmax>
+			<ymax>260</ymax>
+		</bndbox>
+	</object>
+</annotation>
