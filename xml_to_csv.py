@@ -14,7 +14,7 @@ def xml_to_csv(path):
             value = (root.find('filename').text,
                      int(root.find('size')[0].text),
                      int(root.find('size')[1].text),
-                     member[0].text,
+                     'bobber',# member[0].text,
                      int(member[4][0].text),
                      int(member[4][1].text),
                      int(member[4][2].text),
@@ -27,14 +27,11 @@ def xml_to_csv(path):
 
 
 def main():
-    image_path = os.path.join(os.getcwd(), 'images')
-    print(image_path)
-    dirs = os.listdir(image_path)
-    for d in dirs:
-        sub_path = os.path.join(image_path, d)
-        print(sub_path)
-        xml_df = xml_to_csv(sub_path)
-        xml_df.to_csv(sub_path + '_labels.csv', index=None)
+    for directory in ['train', 'test']:
+        image_path = os.path.join(os.getcwd(), 'images/{}'.format(directory))
+        print(image_path)
+        xml_df = xml_to_csv(image_path)
+        xml_df.to_csv('images/data/{}_labels.csv'.format(directory), index=None)
         print('Successfully converted xml to csv.')
 
 

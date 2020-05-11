@@ -20,8 +20,8 @@ dependencies:
     - cython
     - git
     - lxml
+    - contextlib2
     - pip:
-        - contextlib2
         - bayesian-optimization
         - gym
         - kaggle

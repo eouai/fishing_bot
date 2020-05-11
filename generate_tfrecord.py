@@ -7,10 +7,11 @@ import io
 import pandas as pd
 import tensorflow as tf
 import sys
-sys.path.append("C:\\Users\\Burt\\Documents\\Git\\fishing_bot\\tensorflow\\models\\research\\")
-sys.path.append("C:\\Users\\Burt\\Documents\\Git\\fishing_bot\\tensorflow\\models\\object_detection\\utils")
+current_path = os.getcwd()
+sys.path.append(current_path + "\\tensorflow\\models\\research\\")
+sys.path.append(current_path + "\\tensorflow\\models\\object_detection\\utils")
 
-# directory = 'C:\\Users\\Burt\\Documents\\Git\\fishing_bot\\tensorflow\\models\\research'
+# directory = current_path + '\\fishing_bot\\tensorflow\\models\\research'
 # os.chdir(directory)
 # print(os.getcwd())
 
