@@ -1,0 +1,4 @@
+name: fishing_bot
+
+dependencies:
+    - tensorflow
