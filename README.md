@@ -23,7 +23,9 @@ https://github.com/tensorflow/models
 
 Next, before tensorflow object detection API can be used with Python, protobuf files need to be generated from the tensorflow models protos files. Run the script use_protofbuy.py:
 
-~python use_protofbuf.py
+```
+python use_protofbuf.py
+```
 
 The protoc converter used is included in this repo but was sourced from:
 https://github.com/protocolbuffers/protobuf/releases
