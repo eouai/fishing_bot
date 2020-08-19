@@ -10,13 +10,20 @@ clone or download this repo
 open an anaconda prompt and browse to the location of the cloned / downloaded repo
 
 create the virtual env by running the following command in the anaconda prompt:
+
+```
 conda env create -f environment.yml
+```
 
 Once the env is created, activate it:
+```
 conda activate fishing_bot
+```
 
 Install pycocotools:
+```
 pip install "git+https://github.com/philferriere/cocoapi.git#egg=pycocotools&subdirectory=PythonAPI"
+```
 
 Download the tensorflow models git repo. Save this tensorflow models repo to your fishing_bot folder:
 https://github.com/tensorflow/models
