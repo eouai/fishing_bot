@@ -7,12 +7,10 @@ import io
 import pandas as pd
 import tensorflow as tf
 import sys
-sys.path.append("C:\\Users\\Burt\\Documents\\Git\\fishing_bot\\tensorflow\\models\\research\\")
-sys.path.append("C:\\Users\\Burt\\Documents\\Git\\fishing_bot\\tensorflow\\models\\object_detection\\utils")
-
-# directory = 'C:\\Users\\Burt\\Documents\\Git\\fishing_bot\\tensorflow\\models\\research'
-# os.chdir(directory)
-# print(os.getcwd())
+current_path = os.getcwd()
+print(current_path)
+sys.path.append(current_path + "\\tensorflow\\models\\research\\")
+sys.path.append(current_path + "\\tensorflow\\models\\research\\object_detection\\utils")
 
 from PIL import Image
 from object_detection.utils import dataset_util
@@ -40,7 +38,7 @@ def split(df, group):
 
 
 def create_tf_example(group, path):
-    with tf.gfile.GFile(os.path.join(path, '{}'.format(group.filename)), 'rb') as fid:
+    with tf.io.gfile.GFile(os.path.join(path, '{}'.format(group.filename)), 'rb') as fid:
         encoded_jpg = fid.read()
     encoded_jpg_io = io.BytesIO(encoded_jpg)
     image = Image.open(encoded_jpg_io)
@@ -81,7 +79,7 @@ def create_tf_example(group, path):
 
 
 def main(_):
-    writer = tf.python_io.TFRecordWriter(FLAGS.output_path)
+    writer = tf.io.TFRecordWriter(FLAGS.output_path)
     path = os.path.join(FLAGS.image_dir)
     examples = pd.read_csv(FLAGS.csv_input)
     grouped = split(examples, 'filename')
