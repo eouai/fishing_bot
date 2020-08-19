@@ -14,4 +14,3 @@ os.chdir(operating_dir)
 for file in os.listdir(protos_abs):
     if file.endswith(".proto"):
         os.system(protoc_path+" "+protos_rel+file+" --python_out=.")
-        # print(protoc_path+" "+protos_rel+file+" --python_out=.") #+protos_dir+" --proto_path="+protos_dir)
