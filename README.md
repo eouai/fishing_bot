@@ -25,7 +25,12 @@ Install pycocotools:
 pip install "git+https://github.com/philferriere/cocoapi.git#egg=pycocotools&subdirectory=PythonAPI"
 ```
 
-Download the tensorflow models git repo. Save this tensorflow models repo to your fishing_bot folder:
+Next, clone the tensorflow models into this repo:
+```
+git clone --depth 1 https://github.com/tensorflow/models
+```
+
+If you don't have GIT or you prefer, you can manually download the the zip and save it into a "models" directory into this repo. These models are located at:
 https://github.com/tensorflow/models
 
 Next, before tensorflow object detection API can be used with Python, protobuf files need to be generated from the tensorflow models protos files. Run the script use_protofbuy.py:
