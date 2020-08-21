@@ -2,3 +2,8 @@ name: fishing_bot
 
 dependencies:
     - tensorflow
+    - Cython
+    - git
+    - imageio
+    - pip:
+        - "git+https://github.com/philferriere/cocoapi.git#egg=pycocotools&subdirectory=PythonAPI"

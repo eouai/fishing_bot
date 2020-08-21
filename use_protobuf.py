@@ -17,4 +17,4 @@ for file in os.listdir(protos_abs):
         os.system(protoc_path+" "+protos_rel+file+" --python_out=.")
 
 # Next, copy the object detection API setup.py file, to prepare for pip install
-copyfile(os.join(operating_dir, 'object_detection\\packages\\tf2\\setup.py'), os.join(operating_dir+'setup.py'))
+copyfile(os.path.join(operating_dir, 'object_detection\\packages\\tf2\\setup.py'), os.path.join(operating_dir+'setup.py'))

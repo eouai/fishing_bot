@@ -7,7 +7,7 @@ https://visualstudio.microsoft.com/visual-cpp-build-tools/
 
 clone or download this repo
 
-open an anaconda prompt and browse to the location of the cloned / downloaded repo
+These instructions are structured for operating in a Windows env.  Open an Anaconda prompt (run as administrator) and browse to the location of the cloned / downloaded repo.
 
 create the virtual env by running the following command in the anaconda prompt:
 
@@ -20,20 +20,15 @@ Once the env is created, activate it:
 conda activate fishing_bot
 ```
 
-Install pycocotools:
-```
-pip install "git+https://github.com/philferriere/cocoapi.git#egg=pycocotools&subdirectory=PythonAPI"
-```
-
 Next, clone the tensorflow models into this repo:
 ```
 git clone --depth 1 https://github.com/tensorflow/models
 ```
 
-If you don't have GIT or you prefer, you can manually download the the zip and save it into a "models" directory into this repo. These models are located at:
+If preferred, you can manually download the zip and save it into a "models" directory into this repo. These models are located at:
 https://github.com/tensorflow/models
 
-Next, before tensorflow object detection API can be used with Python, protobuf files need to be generated from the tensorflow models protos files. Run the script use_protofbuy.py:
+Next, before tensorflow object detection API can be used with Python, protobuf files need to be generated from the tensorflow models protos files. Run the script use_protofbuy.py in your Anaconda prompt:
 
 ```
 python use_protofbuf.py
@@ -41,6 +36,12 @@ python use_protofbuf.py
 
 The protoc converter used is included in this repo but was sourced from:
 https://github.com/protocolbuffers/protobuf/releases
+
+Finally, we need to pip install the Object Detection API.  Run the following:
+```
+cd models/research/
+pip install .
+```
 
 Next, to generate tfrecord data files from the training and test data-sets, run:
 python generate_tfrecord.py --csv_input=images/data/train_labels.csv --image_dir=images/train --output_path=images/train.record
